@@ -23,7 +23,7 @@ const BattleOfMonsters = () => {
   const monsters = useSelector(selectMonsters);
   const selectedMonster = useSelector(selectSelectedMonster);
 
-  console.log(monsters2.monsters);
+  // console.log(selectedMonster);
 
   useEffect(() => {
     dispatch(fetchMonstersData());
@@ -37,11 +37,12 @@ const BattleOfMonsters = () => {
     <PageContainer>
       <Title>Battle of Monsters</Title>
 
-      <MonstersList monsters={monsters2.monsters} />
+      <MonstersList monsters={monsters} />
 
       <BattleSection>
         <MonsterBattleCard
           title={selectedMonster?.name || "Player"}
+          monster={selectedMonster || null}
         ></MonsterBattleCard>
         <StartBattleButton
           data-testid="start-battle-button"

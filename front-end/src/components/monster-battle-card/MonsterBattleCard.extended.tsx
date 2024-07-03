@@ -13,6 +13,7 @@ const MonsterBattleCard: React.FC<MonsterCardProps> = ({ monster, title }) => {
   console.log(monster?.imageUrl);
   return (
     <BattleMonsterCard centralized>
+      {monster?.imageUrl}
       <BattleMonsterTitle>{title!}</BattleMonsterTitle>
     </BattleMonsterCard>
   );
