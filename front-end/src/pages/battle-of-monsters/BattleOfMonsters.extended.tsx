@@ -15,11 +15,15 @@ import {
   StartBattleButton,
 } from "./BattleOfMonsters.extended.styled";
 
+import monsters2 from "../../monsters.json";
+
 const BattleOfMonsters = () => {
   const dispatch = useAppDispatch();
 
   const monsters = useSelector(selectMonsters);
   const selectedMonster = useSelector(selectSelectedMonster);
+
+  console.log(monsters2.monsters);
 
   useEffect(() => {
     dispatch(fetchMonstersData());
@@ -33,7 +37,7 @@ const BattleOfMonsters = () => {
     <PageContainer>
       <Title>Battle of Monsters</Title>
 
-      <MonstersList monsters={monsters} />
+      <MonstersList monsters={monsters2.monsters} />
 
       <BattleSection>
         <MonsterBattleCard

@@ -7,6 +7,7 @@ app.use(cors());
 
 app.disable('etag');
 app.use(express.json());
+
 app.use(router);
 
 export default app;
