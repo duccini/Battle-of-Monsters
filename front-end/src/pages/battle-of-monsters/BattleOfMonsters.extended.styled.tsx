@@ -16,20 +16,19 @@ export const BattleSection = styled.section`
   gap: 25px;
 `;
 
-export const StartBattleButton = styled(Button)`
-  // background: disabled ? colors.lightGreen : colors.darkGreen,
-
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 5px;
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 21px;
-
-  padding: 12px 30px;
-  text-transform: capitalize;
-  &:hover {
-    /* background: colors.darkGreenHover, */
-  }
-`;
+export const StartBattleButton = styled(Button)(({ disabled }) => ({
+  background: disabled ? colors.lightGreen : colors.darkGreen,
+  boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+  borderRadius: "5px",
+  fontFamily: "Roboto",
+  fontStyle: "normal",
+  fontWeight: "400",
+  fontSize: "18px",
+  lineHeight: "21px",
+  color: `${colors.white} !important`,
+  padding: "12px 30px",
+  textTransform: "capitalize",
+  "&:hover": {
+    background: colors.darkGreenHover,
+  },
+}));

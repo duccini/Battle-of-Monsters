@@ -14,8 +14,9 @@ import {
   PageContainer,
   StartBattleButton,
 } from "./BattleOfMonsters.extended.styled";
+import { selectRandomMonster } from "../../reducers/monsters/monsters.selectors.extended";
 
-import monsters2 from "../../monsters.json";
+// import monsters2 from "../../monsters.json";
 
 const BattleOfMonsters = () => {
   const dispatch = useAppDispatch();
@@ -23,7 +24,8 @@ const BattleOfMonsters = () => {
   const monsters = useSelector(selectMonsters);
   const selectedMonster = useSelector(selectSelectedMonster);
 
-  // console.log(selectedMonster);
+  // Random Monster
+  const randomMonster = useSelector(selectRandomMonster);
 
   useEffect(() => {
     dispatch(fetchMonstersData());
@@ -31,6 +33,7 @@ const BattleOfMonsters = () => {
 
   const handleStartBattleClick = () => {
     // Fight!
+    alert("fight");
   };
 
   return (
@@ -51,7 +54,10 @@ const BattleOfMonsters = () => {
         >
           Start Battle
         </StartBattleButton>
-        <MonsterBattleCard title="Computer"></MonsterBattleCard>
+        <MonsterBattleCard
+          monster={randomMonster || null}
+          title="Computer"
+        ></MonsterBattleCard>
       </BattleSection>
     </PageContainer>
   );

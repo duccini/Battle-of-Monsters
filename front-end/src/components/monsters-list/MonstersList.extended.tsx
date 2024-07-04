@@ -9,24 +9,41 @@ import {
   MonsterName,
   MonstersSection,
 } from "./MonstersList.styled";
+import { setRandomMonster } from "../../reducers/monsters/monsters.actions.extended";
 
 type MonstersListProps = {
   monsters: Monster[];
 };
 
-const MonstersList: React.FC<MonstersListProps> = ({ monsters }) => {
+const MonstersList: React.FC<MonstersListProps> = ({
+  monsters,
+}: MonstersListProps) => {
   const dispatch = useAppDispatch();
-
-  console.log(monsters);
 
   const [selectedMonsterId, setSelectedMonsterId] = useState<string | null>(
     null,
   );
 
+  const getRandomMonsterIndex = (monster: Monster): number => {
+    const index = Math.floor(Math.random() * monsters.length);
+
+    if (monster.id === monsters[index].id) {
+      return getRandomMonsterIndex(monster);
+    }
+
+    return index;
+  };
+
   const handleMonsterClick = (monster: Monster) => {
     const value = selectedMonsterId === monster.id ? null : monster.id;
     setSelectedMonsterId(value);
     dispatch(setSelectedMonster(!value ? null : monster));
+
+    const randomIndex = getRandomMonsterIndex(monster);
+
+    // console.log(randomIndex);
+
+    dispatch(setRandomMonster(monsters[randomIndex]));
   };
 
   return (
