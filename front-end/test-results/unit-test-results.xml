@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="17" failures="0" errors="0" time="16.806">
+  <testsuite name="Monsters Service Extended" errors="0" failures="0" skipped="0" timestamp="2024-07-05T13:35:02" time="7.887" tests="1">
+    <testcase classname="Monsters Service Extended should get the winner of the battle of monsters" name="Monsters Service Extended should get the winner of the battle of monsters" time="0.086">
+    </testcase>
+  </testsuite>
+  <testsuite name="Monsters Service" errors="0" failures="0" skipped="0" timestamp="2024-07-05T13:35:02" time="8.05" tests="2">
+    <testcase classname="Monsters Service should return the monsters list empty" name="Monsters Service should return the monsters list empty" time="0.047">
+    </testcase>
+    <testcase classname="Monsters Service should return the monsters list with data" name="Monsters Service should return the monsters list with data" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="Monsters Reducer" errors="0" failures="0" skipped="0" timestamp="2024-07-05T13:35:02" time="8.355" tests="5">
+    <testcase classname="Monsters Reducer should return the initial state" name="Monsters Reducer should return the initial state" time="0.011">
+    </testcase>
+    <testcase classname="Monsters Reducer should not change the monsters list on action pending" name="Monsters Reducer should not change the monsters list on action pending" time="0.003">
+    </testcase>
+    <testcase classname="Monsters Reducer should not change the monsters list on action rejected" name="Monsters Reducer should not change the monsters list on action rejected" time="0.004">
+    </testcase>
+    <testcase classname="Monsters Reducer should change the monsters list on action fulfilled" name="Monsters Reducer should change the monsters list on action fulfilled" time="0.003">
+    </testcase>
+    <testcase classname="Monsters Reducer should add the selected monster to the state" name="Monsters Reducer should add the selected monster to the state" time="0.003">
+    </testcase>
+  </testsuite>
+  <testsuite name="WinnerDisplay" errors="0" failures="0" skipped="0" timestamp="2024-07-05T13:35:03" time="12.277" tests="1">
+    <testcase classname="WinnerDisplay renders the default text when no winner text is provided" name="WinnerDisplay renders the default text when no winner text is provided" time="0.081">
+    </testcase>
+  </testsuite>
+  <testsuite name="MonsterBattleCardExtended" errors="0" failures="0" skipped="0" timestamp="2024-07-05T13:35:03" time="12.39" tests="1">
+    <testcase classname="MonsterBattleCardExtended renders the monster card correctly with a monster" name="MonsterBattleCardExtended renders the monster card correctly with a monster" time="0.077">
+    </testcase>
+  </testsuite>
+  <testsuite name="MonsterBattleCard" errors="0" failures="0" skipped="0" timestamp="2024-07-05T13:35:03" time="12.24" tests="1">
+    <testcase classname="MonsterBattleCard renders the card with a title when no monster is provided" name="MonsterBattleCard renders the card with a title when no monster is provided" time="0.084">
+    </testcase>
+  </testsuite>
+  <testsuite name="MonstersList" errors="0" failures="0" skipped="0" timestamp="2024-07-05T13:35:02" time="12.793" tests="3">
+    <testcase classname="MonstersList should render the monsters list" name="MonstersList should render the monsters list" time="0.099">
+    </testcase>
+    <testcase classname="MonstersList should render the no monsters available message" name="MonstersList should render the no monsters available message" time="0.007">
+    </testcase>
+    <testcase classname="MonstersList should click on the first monster card" name="MonstersList should click on the first monster card" time="0.07">
+    </testcase>
+  </testsuite>
+  <testsuite name="BattleOfMonsters" errors="0" failures="0" skipped="0" timestamp="2024-07-05T13:35:03" time="14.392" tests="3">
+    <testcase classname="BattleOfMonsters should render the page container" name="BattleOfMonsters should render the page container" time="0.113">
+    </testcase>
+    <testcase classname="BattleOfMonsters should enable the start battle button on choose a monster" name="BattleOfMonsters should enable the start battle button on choose a monster" time="0.077">
+    </testcase>
+    <testcase classname="BattleOfMonsters should start fight after click on button" name="BattleOfMonsters should start fight after click on button" time="0.045">
+    </testcase>
+  </testsuite>
+</testsuites>

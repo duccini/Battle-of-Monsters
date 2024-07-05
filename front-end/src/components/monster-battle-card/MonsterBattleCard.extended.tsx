@@ -1,4 +1,4 @@
-import { LinearProgress } from "@mui/material";
+// import { LinearProgress } from "@mui/material";
 import { Monster } from "../../models/interfaces/monster.interface";
 import {
   BattleMonsterCard,

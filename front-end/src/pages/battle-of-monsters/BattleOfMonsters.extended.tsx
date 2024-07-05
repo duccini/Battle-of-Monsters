@@ -14,7 +14,12 @@ import {
   PageContainer,
   StartBattleButton,
 } from "./BattleOfMonsters.extended.styled";
-import { selectRandomMonster } from "../../reducers/monsters/monsters.selectors.extended";
+import {
+  monsterWins,
+  selectRandomMonster,
+} from "../../reducers/monsters/monsters.selectors.extended";
+import { fetchBattleWins } from "../../reducers/monsters/monsters.actions.extended";
+import { WinnerDisplay } from "../../components/winner-display/WinnerDisplay";
 
 // import monsters2 from "../../monsters.json";
 
@@ -23,6 +28,7 @@ const BattleOfMonsters = () => {
 
   const monsters = useSelector(selectMonsters);
   const selectedMonster = useSelector(selectSelectedMonster);
+  const winner = useSelector(monsterWins);
 
   // Random Monster
   const randomMonster = useSelector(selectRandomMonster);
@@ -33,7 +39,14 @@ const BattleOfMonsters = () => {
 
   const handleStartBattleClick = () => {
     // Fight!
-    alert("fight");
+    if (selectedMonster && randomMonster) {
+      dispatch(
+        fetchBattleWins({
+          monster1Id: selectedMonster.id,
+          monster2Id: randomMonster.id,
+        }),
+      );
+    }
   };
 
   return (
@@ -41,6 +54,8 @@ const BattleOfMonsters = () => {
       <Title>Battle of Monsters</Title>
 
       <MonstersList monsters={monsters} />
+
+      {winner && <WinnerDisplay text={winner?.winner.name} />}
 
       <BattleSection>
         <MonsterBattleCard
@@ -56,7 +71,7 @@ const BattleOfMonsters = () => {
         </StartBattleButton>
         <MonsterBattleCard
           monster={randomMonster || null}
-          title="Computer"
+          title={randomMonster?.name || "Computer"}
         ></MonsterBattleCard>
       </BattleSection>
     </PageContainer>

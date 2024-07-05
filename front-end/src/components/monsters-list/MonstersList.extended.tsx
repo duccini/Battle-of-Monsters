@@ -9,7 +9,10 @@ import {
   MonsterName,
   MonstersSection,
 } from "./MonstersList.styled";
-import { setRandomMonster } from "../../reducers/monsters/monsters.actions.extended";
+import {
+  clearWinner,
+  setRandomMonster,
+} from "../../reducers/monsters/monsters.actions.extended";
 
 type MonstersListProps = {
   monsters: Monster[];
@@ -44,6 +47,8 @@ const MonstersList: React.FC<MonstersListProps> = ({
     // console.log(randomIndex);
 
     dispatch(setRandomMonster(monsters[randomIndex]));
+
+    dispatch(clearWinner());
   };
 
   return (
